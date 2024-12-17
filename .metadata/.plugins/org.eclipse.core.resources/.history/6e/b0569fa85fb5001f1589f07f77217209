@@ -1,0 +1,9 @@
+package Selenium;
+
+public class HandleWindowPopup {
+
+	public static void main(String[] args) {
+
+	}
+
+}

@@ -1,0 +1,28 @@
+package com.crm.qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestBase {
+
+	static WebDriver driver;
+	static Properties prop;
+	
+	public TestBase() throws IOException
+	{
+		try
+		{
+		prop=new Properties();
+		FileInputStream ip = new FileInputStream("C:\\Users\\DarshanaDhameliya\\eclipse-workspace\\FreeCRMTest\\src\\main\\java\\com\\crm\\config\\config.properties");
+			prop.load(ip);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+}

@@ -1,0 +1,34 @@
+package JavaProgramTest;
+
+public class ArmStrongNumber {
+
+	public static void checkarmstrongnumber(int num)
+	{
+		int r=0;
+		int temp;
+		int n=0;
+		int sum=0
+		
+		
+		temp=num;
+		while(num>0)
+		{
+			r=num/10;
+			n=n%10;
+			sum= (n*n*n)+sum;
+		}
+		
+		if(temp==num)
+		{
+			System.out.println("number is palin");
+		}
+		else
+		{
+			System.out.println("number is not pali");
+		}
+	}
+	public static void main(String[] args) {
+
+	}
+
+}

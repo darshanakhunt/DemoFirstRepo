@@ -1,0 +1,14 @@
+package Selenium;
+
+import org.openqa.selenium;
+
+public class LaunchChrome {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver","C:\\Darshana\\chromedriver-win64\\chromedriver");
+		WebDriver driver= new ChromeDriver();
+		
+	}
+
+}

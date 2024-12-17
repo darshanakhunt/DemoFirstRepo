@@ -1,0 +1,60 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class ContactsPage extends TestBase {
+
+	
+	@FindBy(xpath="//span[contains(text(),'Contacts')]")
+	WebElement contactLabel;
+	
+	@FindBy(xpath="//button[@class='ui linkedin icon button']")
+	WebElement ClickOnRefreshButton;
+	
+	@FindBy(xpath="//input[@name='first_name']")
+	WebElement firstname;
+	
+	@FindBy(xpath="//input[@name='last_name']")
+	WebElement lastname;
+	
+	//@FindBy(xpath="//tr[td/a[contains(text(), 'darshana dhameliya')]]//div[contains(@class, 'checkbox')]//input")
+	//WebElement clickcheckbox;
+	
+	@FindBy(xpath="//div[@name='company']/child:: input[@class='search']")
+	WebElement Companyname;
+	
+	@FindBy(xpath="//button[@class='ui linkedin button']")
+	WebElement Savebutton;
+	
+	public ContactsPage() throws IOException {
+			PageFactory.initElements(driver, this);
+	}
+
+	
+	public boolean verifyContactLabel()
+	{
+		return contactLabel.isDisplayed();
+	}
+	
+	public void selectContacts()
+	{
+		ClickOnRefreshButton.click();
+		//clickcheckbox.click();
+	}
+	
+	public void createNewContact(String fname,String lname,String cname)
+	{
+		firstname.sendKeys(fname);
+		lastname.sendKeys(lname);
+		//return fname;
+		Companyname.sendKeys(cname);
+	}
+	
+}

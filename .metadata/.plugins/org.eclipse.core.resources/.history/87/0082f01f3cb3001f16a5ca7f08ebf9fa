@@ -1,0 +1,17 @@
+package Collections;
+
+public class Employee {
+
+	public static void main(String[] args) {
+
+		int age;
+		String name;
+		String dept;
+		
+		Employee(int age, String name,String dept)
+		{
+			this.age
+		}
+	}
+
+}

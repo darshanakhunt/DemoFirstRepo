@@ -1,0 +1,29 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+
+import com.crm.qa.base.TestBase;
+
+public class LoginPage extends TestBase{
+
+	
+	//Page Factory -IR:
+	@FindBy(name="email")
+	WebElement username;
+	
+	@FindBy(name="password")
+	WebElement password;
+	
+	@FindBy(xpath="//div[@class='ui fluid large blue submit button']")
+	WebElement login;
+	public LoginPage() throws IOException {
+		super();
+		
+	}
+
+	
+	
+}

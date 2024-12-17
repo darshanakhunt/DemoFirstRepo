@@ -1,0 +1,11 @@
+package Selenium;
+
+public class LaunchChrome {
+
+	public static void main(String[] args) {
+
+		System.setProperty("webdriver.chrome.driver","C:\\Darshana\\chromedriver-win64\\chromedriver");
+		
+	}
+
+}

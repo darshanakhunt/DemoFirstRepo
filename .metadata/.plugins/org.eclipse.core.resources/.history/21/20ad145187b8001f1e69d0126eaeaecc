@@ -1,0 +1,59 @@
+package com.crm.qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.util.EventListener;
+import java.util.Properties;
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.events.EventFiringDecorator;
+import org.openqa.selenium.support.events.WebDriverListener;
+
+import com.crm.qa.util.WebEventListenerTest;
+
+public class TestBase {
+
+	public static WebDriver driver;
+	public static Properties prop;
+	//public static EventListener eventDriver;
+	
+	public static WebDriverListener listener;
+
+	
+	public TestBase() throws IOException {
+		try {
+			prop = new Properties();
+			FileInputStream ip = new FileInputStream(
+					"C:\\Users\\DarshanaDhameliya\\eclipse-workspace\\FreeCRMTest\\src\\main\\java\\com\\crm\\config\\config.properties");
+			prop.load(ip);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+	}
+
+	public static void initialization() throws IOException {
+		String browsername = prop.getProperty("browser");
+
+		System.setProperty("webdriver.chrome.driver", "C:/Darshana/chromedriver-win64/chromedriver.exe");
+		driver = new ChromeDriver();
+
+		listener= new WebEventListenerTest();
+		driver = new EventFiringDecorator<>(listener).decorate(driver);
+	
+
+		
+		driver.manage().window().maximize();
+		driver.manage().deleteAllCookies();
+		
+		
+	//	driver.get("https://www.google.com");
+	       
+		driver.get(prop.getProperty("url"));
+	}
+}

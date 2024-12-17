@@ -1,0 +1,16 @@
+package Collections;
+
+public class Employee {
+
+	
+		int age;
+		String name;
+		String dept;
+		
+		Employee(int age, String name,String dept)
+		{
+			this.age
+		}
+	
+
+}

@@ -1,0 +1,7 @@
+package JavaProgramTest;
+
+public abstract class AbstractClass {
+
+	public abstract void loan();
+	
+}

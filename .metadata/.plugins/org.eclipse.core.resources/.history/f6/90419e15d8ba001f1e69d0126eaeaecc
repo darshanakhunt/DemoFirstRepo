@@ -1,0 +1,25 @@
+package JavaProgramTest;
+
+public class ConstructorConcepts {
+
+	String name;
+	int age;
+	
+	public ConstructorConcepts()
+	{
+		System.out.println("default");
+	}
+	
+	public ConstructorConcepts(int a)
+	{
+		System.out.println("one para");
+	}
+	
+	public static void main(String[] args) {
+
+		ConstructorConcepts obj = new ConstructorConcepts();
+		
+		
+	}
+
+}

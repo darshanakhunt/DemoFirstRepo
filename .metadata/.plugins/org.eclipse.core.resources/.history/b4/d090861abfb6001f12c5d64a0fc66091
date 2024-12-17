@@ -1,0 +1,37 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class ContactsPage extends TestBase {
+
+	
+	@FindBy(xpath="//span[contains(text(),'Contacts')]")
+	WebElement contactLabel;
+	
+	@FindBy(xpath="//div[@class='ui fitted checkbox']")
+	WebElement clickcheckbox;
+	
+	
+	public ContactsPage() throws IOException {
+			PageFactory.initElements(driver, this);
+	}
+
+	
+	public boolean verifyContactLabel()
+	{
+		return contactLabel.isDisplayed();
+	}
+	
+	public void selectContacts(String name)
+	{
+		clickcheckbox.click();
+		
+	}
+}

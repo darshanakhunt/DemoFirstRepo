@@ -1,0 +1,23 @@
+package Selenium;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class FrameHandling {
+
+	public static void main(String[] args) throws InterruptedException {
+		
+		System.setProperty("webdriver.chrome.driver","C:/Darshana/chromedriver-win64/chromedriver.exe");
+		WebDriver driver= new ChromeDriver();
+		
+		driver.manage().window().maximize();
+	//	driver.get("https://freecrm.com/en");
+		driver.get("https://ui.cogmento.com/?lang=en");
+		Thread.sleep(3000);
+		driver.findElement(By.xpath("//a[contains(@class, 'MuiButtonBase-root') and text()='Login']")).click();
+		Thread.sleep(10000);
+		driver.findElement(By.xpath("//input[@type='text']")).sendKeys("darshanakhunt@gmail.com");
+	}
+
+}

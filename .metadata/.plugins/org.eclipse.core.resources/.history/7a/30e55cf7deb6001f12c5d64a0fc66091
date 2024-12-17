@@ -1,0 +1,72 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class HomePage extends TestBase {
+
+	@FindBy(xpath = "//span[contains(text(), 'Darshana Dhameliya')]")
+	WebElement userNameLabel;
+
+	@FindBy(xpath = "//span[contains(text(),'Contacts')]")
+	WebElement ContactsLink;
+
+
+	//@FindBy(xpath ="//button[@class='ui mini basic icon button']//child :: i[@class='plus inverted icon']")
+	@FindBy(xpath="//span[contains(text(), 'Contacts')]/ancestor::a[@class='item']/following-sibling::button[@class='ui mini basic icon button']");
+	WebElement ContactPlusButton;
+	
+	@FindBy(xpath = "//span[contains(text(),'Deals')]")
+	WebElement Dealslink;
+
+	@FindBy(xpath = "//span[contains(text(),'Tasks')]")
+	WebElement Tasklink;
+	
+	@FindBy(xpath="//button[@class='ui linkedin icon button']")
+	WebElement NewContactLink;
+	
+	public HomePage() throws IOException {
+		PageFactory.initElements(driver, this);
+
+	}
+
+	public String VerifyHomePageTitle() {
+		return driver.getTitle();
+	}
+
+	public ContactsPage clickOnContactsLink() throws IOException {
+		ContactsLink.click();
+		return new ContactsPage();
+	}
+
+	public DealsPage clickOnDealsPage() throws IOException {
+		Dealslink.click();
+		return new DealsPage();
+
+	}
+	
+	public TaskPage clickOnTaskLink() throws IOException {
+		Tasklink.click();
+		return new TaskPage();
+
+	}
+	public void clickOnADDNewContactLink() throws InterruptedException
+	{
+		Actions action= new Actions(driver);
+		action.moveToElement(ContactsLink).build().perform();
+		Thread.sleep(2000);
+		ContactPlusButton.click();
+	}
+	
+	public boolean VerifyCorrectUsername()
+	{
+		return userNameLabel.isDisplayed();
+	}
+	
+}

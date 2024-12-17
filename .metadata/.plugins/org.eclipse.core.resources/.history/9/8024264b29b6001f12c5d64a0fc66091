@@ -1,0 +1,27 @@
+package com.crm.qa.base;
+
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.util.Properties;
+
+import org.openqa.selenium.WebDriver;
+
+public class TestBase {
+
+	static WebDriver driver;
+	static Properties prop;
+	
+	public TestBase()
+	{
+		prop=new Properties();
+		FileInputStream ip;
+		try {
+			ip = new FileInputStream("");
+			prop.load(ip);
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		prop.load(ip);
+		}
+}

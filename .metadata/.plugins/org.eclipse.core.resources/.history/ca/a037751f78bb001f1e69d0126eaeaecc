@@ -1,0 +1,17 @@
+package JavaProgramTest;
+
+public class PrimeNumbers {
+	
+	public static boolean isPrimeNumber(int num)
+	{
+		
+	}
+	
+
+	public static void main(String[] args) {
+
+		isPrimeNumber(2)
+		
+	}
+
+}

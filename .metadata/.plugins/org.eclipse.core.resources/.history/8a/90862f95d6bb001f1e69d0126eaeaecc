@@ -1,0 +1,22 @@
+package JavaProgramTest;
+
+public class FactorialNum {
+
+	
+	public static int FactorialCheck(int num)
+	{
+		int fact=0;
+		
+		for(int i=1;i<=num;i++)
+		{
+			fact=fact*i;
+		}
+
+		return fact;
+	}
+	public static void main(String[] args) {
+
+		System.out.println(FactorialCheck(10));
+	}
+
+}

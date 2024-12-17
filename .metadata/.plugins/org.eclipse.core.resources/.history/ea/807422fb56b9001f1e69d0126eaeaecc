@@ -1,0 +1,20 @@
+package JavaProgramTest;
+
+public class TestBank {
+
+	public static void main(String[] args) {
+
+		
+		HSBCBAnk hs= new HSBCBAnk();
+		hs.carload();
+		hs.credit();
+		hs.debit();
+		hs.eduloan();
+		hs.carload();
+		
+		
+		System.out.println("**********");
+		
+	}
+
+}

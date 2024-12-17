@@ -1,0 +1,46 @@
+package com.crm.qa.pages;
+
+import java.io.IOException;
+
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
+
+import com.crm.qa.base.TestBase;
+
+public class LoginPage extends TestBase{
+
+	
+	//Page Factory -IR:
+	@FindBy(name="email")
+	WebElement username;
+	
+	@FindBy(name="password")
+	WebElement password;
+	
+	@FindBy(xpath="//div[@class='ui fluid large blue submit button']")
+	WebElement login;
+	
+	@FindBy(xpath="//a[contains(text(),'Sign Up')]")
+	WebElement signup;
+	
+	
+	//initilize page object
+	public LoginPage() throws IOException{
+		PageFactory.initElements(driver, this);
+		
+	}
+
+	//actions
+	public String validateLoginPageTitle() {
+		return driver.getTitle();
+	}
+	
+	public void login(String un,String pw)
+	{
+		username.sendKeys(un);
+		username.sendKeys(pw);
+		login.click();
+	}
+	
+}

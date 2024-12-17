@@ -1,0 +1,25 @@
+package JavaProgramTest;
+
+public class HSBCBAnk implements USBank{
+
+	@Override
+	public void credit() {
+		System.out.println("hsbc credit");
+	}
+
+	@Override
+	public void debit() {
+		// TODO Auto-generated method stub
+		System.out.println("hsbc debit");
+	}
+	}
+
+	@Override
+	public void transfmoney() {
+		System.out.println("hsbc transfer money");
+		
+	}
+	
+	
+
+}
